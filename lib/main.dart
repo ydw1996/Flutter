@@ -10,16 +10,68 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text("헤더"), ),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Icon(Icons.call),
-            Icon(Icons.speaker_notes),
-            Icon(Icons.contacts),
-          ],
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+            title: Text("양평3가", style: TextStyle(color: Colors.black)),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.search),
+                color: Colors.black,
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Icon(Icons.menu),
+                color: Colors.black,
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Icon(Icons.doorbell),
+                color: Colors.black,
+                onPressed: () {},
+              ),
+            ],
         ),
-        bottomNavigationBar: BottomAppBar( child: Text('푸터')),
+        body: Container(
+          height: 150,
+          padding: EdgeInsets.all(10),
+          child: Row(
+            children: [
+              Image.asset('dw.jpg', width: 200),
+              Container(
+                width: 250,
+                padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('자전거 팝니다.', style: TextStyle(color: Colors.blue),),
+                    Text('양평 3가 영등포구'),
+                    Text('3000,0원.'),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Icon(Icons.favorite),
+                        Text('4')
+                      ],
+                    )
+                  ],
+                ),
+              )
+            ],  
+          ),
+        ),
+        bottomNavigationBar: BottomAppBar(
+            child: SizedBox(
+              height: 50,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Icon(Icons.call),
+                  Icon(Icons.speaker_notes),
+                  Icon(Icons.contacts),
+                ],
+              ),
+            )
+        ),
       )
     );
   }
