@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart'; // 패키지 가져옴
+import 'package:flutter/material.dart';
+import 'top_bar.dart'; // TopBar 클래스 import
 
 void main() {
-  runApp(const MyApp()); // 앱 시작해주세요
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -10,27 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-            title: Text("양평3가", style: TextStyle(color: Colors.black)),
-            actions: <Widget>[
-              IconButton(
-                icon: Icon(Icons.search),
-                color: Colors.black,
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: Icon(Icons.menu),
-                color: Colors.black,
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: Icon(Icons.doorbell),
-                color: Colors.black,
-                onPressed: () {},
-              ),
-            ],
-        ),
+        appBar: TopBar(),
         body: ContList(),
         bottomNavigationBar: BtmAppBar(),
       ),
@@ -38,10 +19,11 @@ class MyApp extends StatelessWidget {
   }
 }
 
+st
 class ContList extends StatelessWidget {
   const ContList({super.key});
 
-  @override // 먼저 쓰라고 명령
+  @override
   build(context) {
     return Container(
       height: 150,
