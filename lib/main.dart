@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-st
 class ContList extends StatelessWidget {
   const ContList({super.key});
 
