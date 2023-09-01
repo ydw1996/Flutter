@@ -85,11 +85,27 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class ImageData {
+  final String image;
+
+  ImageData({required this.image});
+}
+
+List<ImageData> datas = [
+  ImageData(image: "assets/DW.jpg"),
+  ImageData(image: "assets/DW.jpg"),
+  // 추가 데이터를 필요한 만큼 추가
+];
 Widget _bodyCont() {
   return ListView.separated(
     itemBuilder: (BuildContext _context, int index) {
       return Container(
         child: Row(
+          children: [
+            ClipRRect(
+              child: Image.asset(datas[index].image),
+            ),
+          ],
         ),
       );
     },
@@ -100,87 +116,87 @@ Widget _bodyCont() {
   );
 }
 
-// class ContList extends StatelessWidget {
-//   final String title;
-//   final String location;
-//   final String price;
-//   final int favoriteCount;
-//   final bool isFirst; // 첫 번째 위젯 여부
+class ContList extends StatelessWidget {
+  final String title;
+  final String location;
+  final String price;
+  final int favoriteCount;
+  final bool isFirst; // 첫 번째 위젯 여부
 
-//   const ContList({
-//     required this.title,
-//     required this.location,
-//     required this.price,
-//     required this.favoriteCount,
-//     this.isFirst = false,
-//     Key? key,
-//   }) : super(key: key);
+  const ContList({
+    required this.title,
+    required this.location,
+    required this.price,
+    required this.favoriteCount,
+    this.isFirst = false,
+    Key? key,
+  }) : super(key: key);
 
-//   @override
-// build(context) {
-//   return Container(
-//     height: 150,
-//     margin: EdgeInsets.fromLTRB(20, 10, 20, 10),
-//     decoration: BoxDecoration(
-//       border: isFirst
-//           ? Border(
-//               top: BorderSide(
-//                 color: Colors.grey,
-//                 width: 1.0,
-//               ),
-//             )
-//           : Border(
-//               bottom: BorderSide(
-//                 color: Colors.grey,
-//                 width: 1.0,
-//               ),
-//             ),
-//     ),
-//     child: Row(
-//       mainAxisAlignment: MainAxisAlignment.center,
-//       children: [
-//         Container(
-//           width: 120,
-//           height: 120,
-//           decoration: BoxDecoration(
-//               borderRadius: BorderRadius.circular(10),
-//               image: DecorationImage(
-//                 image: AssetImage('dw.jpg'),
-//                 fit: BoxFit.cover,
-//               )),
-//         ),
-//         Expanded(
-//           //
-//           child: Container(
-//             padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
-//             child: Column(
-//               crossAxisAlignment: CrossAxisAlignment.start,
-//               children: [
-//                 Text(title, style: TextStyle(color: Colors.white)),
-//                 Text(location, style: TextStyle(color: Colors.white)),
-//                 Text(price, style: TextStyle(color: Colors.white)),
-//                 Expanded(
-//                   child: Row(
-//                     mainAxisAlignment: MainAxisAlignment.end,
-//                     children: [
-//                       Icon(
-//                         Icons.favorite_border,
-//                         color: Colors.white,
-//                       ),
-//                       Text(favoriteCount.toString(),
-//                           style: TextStyle(color: Colors.white))
-//                     ],
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ),
-//       ],
-//     ),
-//   );
-// }
-// }
+  @override
+  build(context) {
+    return Container(
+      height: 150,
+      margin: EdgeInsets.fromLTRB(20, 10, 20, 10),
+      decoration: BoxDecoration(
+        border: isFirst
+            ? Border(
+                top: BorderSide(
+                  color: Colors.grey,
+                  width: 1.0,
+                ),
+              )
+            : Border(
+                bottom: BorderSide(
+                  color: Colors.grey,
+                  width: 1.0,
+                ),
+              ),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 120,
+            height: 120,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                  image: AssetImage('dw.jpg'),
+                  fit: BoxFit.cover,
+                )),
+          ),
+          Expanded(
+            //
+            child: Container(
+              padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(title, style: TextStyle(color: Colors.white)),
+                  Text(location, style: TextStyle(color: Colors.white)),
+                  Text(price, style: TextStyle(color: Colors.white)),
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Icon(
+                          Icons.favorite_border,
+                          color: Colors.white,
+                        ),
+                        Text(favoriteCount.toString(),
+                            style: TextStyle(color: Colors.white))
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
 
 class BtmAppBar extends StatelessWidget {
   const BtmAppBar({super.key});
