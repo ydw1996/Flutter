@@ -44,41 +44,6 @@ class MyApp extends StatelessWidget {
           ],
         ),
         body: _bodyCont(),
-        // color: Color(0xff333333),
-        // child: ListView(
-        //   children: [
-        //     ContList(
-        //       title: '에어팟 왼쪽 팝니다',
-        //       location: '당산동2가',
-        //       price: '90,000원',
-        //       favoriteCount: 7,
-        //     ),
-        //     ContList(
-        //       title: '애플워치 SE 셀룰러 팝니다',
-        //       location: '강남구 서초동',
-        //       price: '500,000원',
-        //       favoriteCount: 7,
-        //     ),
-        //     ContList(
-        //       title: '먹태깡 팝니다',
-        //       location: '당산동6가',
-        //       price: '3,000원',
-        //       favoriteCount: 7,
-        //     ),
-        //     ContList(
-        //       title: '자전거 팝니다~',
-        //       location: '양천구 목1동',
-        //       price: '500,000원',
-        //       favoriteCount: 7,
-        //     ),
-        //     ContList(
-        //       title: '닌텐도 스위치 그레이 플박 급처',
-        //       location: '양평동',
-        //       price: '200,000원',
-        //       favoriteCount: 7,
-        //     ),
-        //   ],
-        // ),
         bottomNavigationBar: BtmAppBar(),
       ),
     );
